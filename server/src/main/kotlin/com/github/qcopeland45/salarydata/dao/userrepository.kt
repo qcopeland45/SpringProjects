@@ -14,8 +14,8 @@ class UserDao(val jdbcTemplate: JdbcTemplate) {
     fun createUserTable() {
         val sql = "CREATE TABLE IF NOT EXISTS Users " +
                 "(id INT NOT NULL, " +
-                " firstName VARCHAR(255), " +
-                " lastName VARCHAR(255), " +
+                " first_name VARCHAR(255), " +
+                " last_name VARCHAR(255), " +
                 " PRIMARY KEY (id)" +
                 ")"
         try{
@@ -24,11 +24,4 @@ class UserDao(val jdbcTemplate: JdbcTemplate) {
             println(d.message)
         }
     }
-
-//    fun insertUser(firstName: String, lastName: String) {
-//
-//        val query = ""
-//
-//
-//    }
 }

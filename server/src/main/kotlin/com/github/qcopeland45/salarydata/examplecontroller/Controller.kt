@@ -2,28 +2,27 @@ package com.github.qcopeland45.salarydata.examplecontroller
 
 import org.springframework.web.bind.annotation.*
 import org.springframework.web.bind.annotation.RequestParam
-import org.springframework.web.bind.annotation.ResponseBody
-import org.springframework.web.bind.annotation.PostMapping
-
 
 
 @RestController
-class Controller(private val testService: Service) {
+class Controller(private val service: Service) {
 
     @GetMapping("/api/test", produces = ["application/json"])
-    fun example() = testService.getEndPointValue()
+    fun example() = service.getEndPointValue()
 
     @GetMapping
     fun testTable() {
-        testService.createTable()
+        service.createTable()
     }
 
     @GetMapping("/api/map")
-    fun updateFoos(@RequestParam(required = true) fullName: List<String>): String {
+    fun createUser(@RequestParam(required = true) fullName: List<String>): String {
         var name = ""
-        fullName.forEach {it
-            name += "$it "
-        }
+        fullName.forEach {name += "$it "}
+        var first = fullName[0]; val last = fullName[1]
+
+        service.insertUser(first,last)
+
         return "User Name: $name"
     }
 
