@@ -6,15 +6,14 @@ import org.springframework.jdbc.core.JdbcTemplate
 import org.springframework.stereotype.Repository
 
 @Repository
-class UserDao(
-    val jdbcTemplate: JdbcTemplate
+class UserDao(val jdbcTemplate: JdbcTemplate) {
 
-) {
-
-    @Bean //should probably be moved to a config package
+    //should probably be moved to a config package
+    //and configured to create table on application startup
+    @Bean
     fun createUserTable() {
-        val sql = "CREATE TABLE Users " +
-                "(id int not NULL, " +
+        val sql = "CREATE TABLE IF NOT EXISTS Users " +
+                "(id INT NOT NULL, " +
                 " firstName VARCHAR(255), " +
                 " lastName VARCHAR(255), " +
                 " PRIMARY KEY (id)" +
@@ -26,11 +25,10 @@ class UserDao(
         }
     }
 
-
-    fun insertUser() {
-
-    }
-
-
-
-}// end of class
+//    fun insertUser(firstName: String, lastName: String) {
+//
+//        val query = ""
+//
+//
+//    }
+}

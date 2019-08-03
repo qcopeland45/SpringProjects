@@ -8,5 +8,5 @@ class SalaryDataApplication
 
 fun main(args: Array<String>) {
 	runApplication<SalaryDataApplication>(*args)
-	System.out.println("APPLICATION RUNNING")
+	println("APPLICATION RUNNING")
 }

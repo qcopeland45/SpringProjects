@@ -6,7 +6,7 @@ class App extends Component {
     constructor(props) {
         super(props)
         this.state = {
-            message: null,
+            message: "",
             firstN: "",
             lastN: ""
         };
@@ -18,11 +18,9 @@ class App extends Component {
 //FUNCTIONS
     //get response from the back end
     componentDidMount() {
-        // Make a GET-request to our backend
+        // Make a GET-request to our backend and map result to json object
         fetch('/api/test')
-        // Map the result to a JSON-object
             .then(response => response.json())
-            // Put the message in the state
             .then(response => {
                 this.setState({ message: response.message })
             })
