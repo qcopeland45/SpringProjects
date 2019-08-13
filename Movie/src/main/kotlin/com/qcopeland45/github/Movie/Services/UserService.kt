@@ -42,7 +42,7 @@ class UserService(
                 "  ID BIGINT NOT NULL,\n" +
                 "  First_Name VARCHAR(50) NOT NULL,\n" +
                 "  Last_Name VARCHAR(50),\n" +
-                "  Movie_Name VARCHAR(255) NOT NULL,\n" +
+                "  Movie_Name VARCHAR(255) UNIQUE NOT NULL,\n" +
                 "  Year_Watched DATE,\n" +
                 "  PRIMARY KEY (ID)\n" +
                 ");"
@@ -67,8 +67,9 @@ class UserService(
                 "(9, 'Todd', 'Wolfenbarger','The Hate U Give', '4/7/2019'),\n" +
                 "(10, 'Carlie', 'Wolfenbarger','Five Feet Away', '4/14/2019'),\n" +
                 "(11, 'Taylor', 'Wolfenbarger','Fighting with Family', '6/28/2019'),\n" +
-                "(12, 'Quincy', 'Wolfenbarger','Oceans 8', '7/4/2019'),\n" +
-                "(13, 'Michele', 'Wolfenbarger','Oceans 8', '7/11/2019');"
+                "(12, 'Quincy', 'Wolfenbarger','Little', '7/4/2019'),\n" +
+                "(13, 'Michele', 'Wolfenbarger','The White lion', '7/4/2019'),\n" +
+                "(14, 'Todd', 'Wolfenbarger','The Imitation Game', '7/11/2019');"
         try {
             jdbcTemplate.execute(insertStmt)
         } catch (dae: DataAccessException) {
