@@ -1,0 +1,13 @@
+#Configuration for test environment
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:5432/movieDB
+    username:
+    password:
+    jpa:
+      properties:
+        hibernate:
+          dialect: org.hibernate.dialect.PostgreSQLDialect
+          temp:
+          ddl-auto: none
+      generate-ddl: false

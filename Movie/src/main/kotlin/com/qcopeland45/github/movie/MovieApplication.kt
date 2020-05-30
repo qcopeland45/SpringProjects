@@ -1,4 +1,4 @@
-package com.qcopeland45.github.Movie
+package com.qcopeland45.github.movie
 
 import org.springframework.boot.autoconfigure.SpringBootApplication
 import org.springframework.boot.runApplication
