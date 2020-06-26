@@ -13,5 +13,9 @@ class UserService(private val userRepository: UserRepository) {
     fun getUserByFirstName(firstName: String): Optional<UsersEntity> {
         return userRepository.findUsersEntityByFirstName(firstName)
     }
+
+    fun findUserByLastName(lastName: String): List<UsersEntity> {
+        return userRepository.findUsersEntitiesByLastName(lastName)
+    }
 }
 

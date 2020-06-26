@@ -9,4 +9,6 @@ import java.util.*
 interface UserRepository : CrudRepository<UsersEntity, UUID> {
 
     fun findUsersEntityByFirstName(firstName: String): Optional<UsersEntity>
+
+    fun findUsersEntitiesByLastName(lastName: String): List<UsersEntity>
 }
